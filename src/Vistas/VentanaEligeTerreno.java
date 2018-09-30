@@ -5,11 +5,21 @@
  */
 package Vistas;
 
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
  * @author usuario1
  */
 public class VentanaEligeTerreno extends javax.swing.JFrame {
+    private String ruta;
+    private String[][] mapa;
 
     /**
      * Creates new form VentanaTerrenos
@@ -46,32 +56,102 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(233, 233, 233))))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(10, 10, 10))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel1)
+                                                .addGap(233, 233, 233))))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(10, 10, 10)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel1)
+                                .addGap(18, 18, 18)
+                                .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ventanaCargaMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaCargaMapaActionPerformed
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+
+    public String[][] getMapa() {
+        return mapa;
+    }
+
+    public void setMapa(String[][] mapa) {
+        this.mapa = mapa;
+    }
+
+    private void ventanaCargaMapaActionPerformed(java.awt.event.ActionEvent evt) throws Error {//GEN-FIRST:event_ventanaCargaMapaActionPerformed
         // TODO add your handling code here:
+        try {
+            JFileChooser archivoSeleccionado = (JFileChooser) evt.getSource();
+            String comando = evt.getActionCommand();
+            File archivo = null;
+            String linea = "";
+            FileReader lector = null;
+            BufferedReader lineas = null;
+            List columnas = new ArrayList<>();
+
+            if (comando.equals(JFileChooser.APPROVE_SELECTION)) {
+                archivo = archivoSeleccionado.getSelectedFile();
+                this.ruta = archivo.getAbsolutePath();
+
+                lector = new FileReader(archivo);
+                lineas = new BufferedReader(lector);
+
+                this.mapa = lineas.lines().map((String line) -> {
+                    String[] fila = line.split(",");
+
+                    if (fila.length > 15) {
+                        throw new Error("El numero de columnas es mayor a 15");
+                    }
+
+                    /*
+                    for (var f : fila) {
+                        System.out.println("algo " + f);
+                    }
+                    */
+
+
+                    columnas.add(fila.length);
+                    return fila;
+                }).toArray((int size) -> new String[size][(int)columnas.get(0)]);
+
+                if(this.mapa.length > 15) {
+                    throw new Error("El numero de filas es mayor a 15 en el mapa");
+                }
+
+                final int referencia = (int)columnas.get(0);
+                boolean esValido = columnas.stream().allMatch((var el) -> ((int)el) == referencia);
+
+                if(!esValido) {
+                    throw new Error("El mapa no es de NxM");
+                }
+
+                this.setVisible(false);
+            } else if (comando.equals(JFileChooser.CANCEL_SELECTION)) {
+                this.setVisible(false);
+            }
+        } catch (Error | FileNotFoundException error) {
+            JOptionPane.showMessageDialog(this, error.getMessage(), "Error", JOptionPane.ERROR_MESSAGE, null);
+            System.out.println(error.getMessage());
+        }
+
     }//GEN-LAST:event_ventanaCargaMapaActionPerformed
 
     /**
@@ -81,7 +161,7 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
