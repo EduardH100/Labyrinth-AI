@@ -28,12 +28,20 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jFileChooser1 = new javax.swing.JFileChooser();
+        ventanaCargaMapa = new javax.swing.JFileChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(605, 450));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Cargar Mapa");
+
+        ventanaCargaMapa.setPreferredSize(new java.awt.Dimension(623, 350));
+        ventanaCargaMapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ventanaCargaMapaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -43,7 +51,7 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -55,12 +63,16 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
+                .addComponent(ventanaCargaMapa, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ventanaCargaMapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ventanaCargaMapaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ventanaCargaMapaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,7 +110,7 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFileChooser jFileChooser1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JFileChooser ventanaCargaMapa;
     // End of variables declaration//GEN-END:variables
 }

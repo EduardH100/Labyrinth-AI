@@ -122,12 +122,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void botonTerrenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerrenosActionPerformed
         VentanaTerrenos ventanaT = new VentanaTerrenos();
         ventanaT.setVisible(true);
-        setVisible(false);
         
     }//GEN-LAST:event_botonTerrenosActionPerformed
 
     private void botonPersonajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPersonajesActionPerformed
-        // TODO add your handling code here:
+        VentanaPersonajes ventanaP = new VentanaPersonajes();
+        ventanaP.setVisible(true);
     }//GEN-LAST:event_botonPersonajesActionPerformed
 
     private void botonInicialFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicialFinalActionPerformed

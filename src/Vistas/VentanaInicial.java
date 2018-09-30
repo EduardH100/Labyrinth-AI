@@ -17,7 +17,7 @@ public class VentanaInicial extends javax.swing.JFrame {
     public VentanaInicial() {
         
         initComponents();
-        show();
+        setVisible(true);
        
     }
     
@@ -46,6 +46,7 @@ public class VentanaInicial extends javax.swing.JFrame {
         botonIniciar.setToolTipText("");
         botonIniciar.setAutoscrolls(true);
         botonIniciar.setName("botonIniciar"); // NOI18N
+        botonIniciar.setPreferredSize(new java.awt.Dimension(70, 23));
         botonIniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonIniciarActionPerformed(evt);
@@ -56,7 +57,7 @@ public class VentanaInicial extends javax.swing.JFrame {
         botonSalir.setAutoscrolls(true);
         botonSalir.setMaximumSize(new java.awt.Dimension(61, 23));
         botonSalir.setMinimumSize(new java.awt.Dimension(61, 23));
-        botonSalir.setPreferredSize(new java.awt.Dimension(61, 23));
+        botonSalir.setPreferredSize(new java.awt.Dimension(70, 23));
         botonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonSalirActionPerformed(evt);
@@ -76,7 +77,7 @@ public class VentanaInicial extends javax.swing.JFrame {
                         .addGap(161, 161, 161)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(botonIniciar)))
+                            .addComponent(botonIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -88,7 +89,7 @@ public class VentanaInicial extends javax.swing.JFrame {
                 .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(botonIniciar)
+                .addComponent(botonIniciar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(81, 81, 81))

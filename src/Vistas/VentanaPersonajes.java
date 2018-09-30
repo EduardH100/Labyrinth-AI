@@ -33,6 +33,7 @@ public class VentanaPersonajes extends javax.swing.JFrame {
         botonAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocation(new java.awt.Point(300, 150));
         setPreferredSize(new java.awt.Dimension(500, 400));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -64,6 +65,9 @@ public class VentanaPersonajes extends javax.swing.JFrame {
 
         botonCancelar.setText("Cancelar");
         botonCancelar.setFocusable(false);
+        botonCancelar.setMaximumSize(new java.awt.Dimension(80, 23));
+        botonCancelar.setMinimumSize(new java.awt.Dimension(80, 23));
+        botonCancelar.setPreferredSize(new java.awt.Dimension(85, 23));
         botonCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonCancelarActionPerformed(evt);
@@ -71,7 +75,9 @@ public class VentanaPersonajes extends javax.swing.JFrame {
         });
 
         botonAceptar.setText("Aceptar");
-        botonAceptar.setPreferredSize(new java.awt.Dimension(75, 23));
+        botonAceptar.setMaximumSize(new java.awt.Dimension(80, 23));
+        botonAceptar.setMinimumSize(new java.awt.Dimension(80, 23));
+        botonAceptar.setPreferredSize(new java.awt.Dimension(85, 23));
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAceptarActionPerformed(evt);
@@ -88,8 +94,8 @@ public class VentanaPersonajes extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
             .addGroup(layout.createSequentialGroup()
                 .addGap(161, 161, 161)
-                .addComponent(botonCancelar)
-                .addGap(47, 47, 47)
+                .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
                 .addComponent(botonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -101,7 +107,7 @@ public class VentanaPersonajes extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(botonCancelar))
+                    .addComponent(botonCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
@@ -109,11 +115,11 @@ public class VentanaPersonajes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
-        // TODO add your handling code here:
+        setVisible(false);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     /**
