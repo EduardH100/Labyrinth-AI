@@ -5,6 +5,9 @@
  */
 package Vistas;
 
+import javax.swing.JOptionPane;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author usuario1
@@ -101,9 +104,13 @@ public class VentanaInicial extends javax.swing.JFrame {
 
     /*Boton Iniciar*/
     private void botonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIniciarActionPerformed
-        VentanaPrincipal ventanaP = new VentanaPrincipal();
-        ventanaP.setVisible(true);
+        // VentanaPrincipal ventanaP = new VentanaPrincipal();
+        JOptionPane.showMessageDialog(this, "Carga un mapa", "Aviso", JOptionPane.WARNING_MESSAGE, null);
         setVisible(false);
+        VentanaEligeTerreno ventanaTerreno = new VentanaEligeTerreno();
+        ventanaTerreno.setVisible(true);
+
+        // ventanaP.setVisible(true);
         
     }//GEN-LAST:event_botonIniciarActionPerformed
 
