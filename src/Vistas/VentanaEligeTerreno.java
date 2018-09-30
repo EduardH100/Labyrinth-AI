@@ -137,7 +137,7 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
                 }
 
                 final int referencia = (int)columnas.get(0);
-                boolean esValido = columnas.stream().allMatch((var el) -> ((int)el) == referencia);
+                boolean esValido = columnas.stream().allMatch((Object el) -> ((int)el) == referencia);
 
                 if(!esValido) {
                     throw new Error("El mapa no es de NxM");
