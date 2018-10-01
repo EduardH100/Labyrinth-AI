@@ -5,7 +5,11 @@
  */
 package Vistas;
 
+import entidades.Terreno;
+
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Stream;
 
 /**
@@ -15,6 +19,7 @@ import java.util.stream.Stream;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private String[][] mapa;
+    private List<Terreno> listaTerrenos;
 
     /**
      * Creates new form VentanaPrincipal
@@ -26,6 +31,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal(String[][] mapa) {
         this();
         this.mapa = mapa;
+        this.listaTerrenos = new ArrayList<>();
+
+        String[] listaIds = Arrays.stream(this.mapa)
+                .flatMap(Stream::of)
+                .distinct()
+                .toArray(String[]::new);
+
+        Arrays.stream(listaIds).forEach((String id) -> {
+            Terreno terreno = new Terreno();
+            terreno.setId(Integer.parseInt(id));
+
+            this.listaTerrenos.add(terreno);
+        });
+    }
+
+    public VentanaPrincipal(String[][] mapa, List<Terreno> listaTerrenos) {
+        this();
+        this.mapa = mapa;
+        this.listaTerrenos = listaTerrenos;
     }
 
     /**
@@ -130,19 +154,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonTerrenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerrenosActionPerformed
-        String[] listaIds = Arrays.stream(this.mapa)
-                .flatMap(Stream::of)
-                .distinct()
-                .toArray(String[]::new);
 
-        /*
-        for (var id: listaIds) {
-            System.out.println(id);
-        }
-        */
-
-        VentanaTerrenos ventanaT = new VentanaTerrenos(listaIds);
+        VentanaTerrenos ventanaT = new VentanaTerrenos(this.mapa, this.listaTerrenos);
+        this.setVisible(false);
         ventanaT.setVisible(true);
+        ventanaT.toFront();
+
+        // this.listaTerrenos = ventanaT.getListaTerrenos();
+
+        this.setVisible(true);
+
         
     }//GEN-LAST:event_botonTerrenosActionPerformed
 

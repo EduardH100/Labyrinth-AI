@@ -19,6 +19,7 @@ import javax.swing.table.DefaultTableModel;
 public class VentanaTerrenos extends javax.swing.JFrame {
 
     private List<Terreno> listaTerrenos;
+    private String[][] mapa;
 
     /**
      * Creates new form VentanaTerrenos
@@ -28,17 +29,13 @@ public class VentanaTerrenos extends javax.swing.JFrame {
         setVisible(true);
     }
 
-    public VentanaTerrenos(String[] listaIds) {
+    public VentanaTerrenos(String[][] mapa, List<Terreno> listaTerrenos) {
         this();
 
-        this.listaTerrenos = new ArrayList<>();
+        // this.listaTerrenos = new ArrayList<>();
+        this.listaTerrenos = listaTerrenos;
 
-        Arrays.stream(listaIds).forEach((String id) -> {
-            Terreno terreno = new Terreno();
-            terreno.setId(Integer.parseInt(id));
-
-            this.listaTerrenos.add(terreno);
-        });
+        this.mapa = mapa;
 
         this.cargarTabla(this.listaTerrenos);
     }
@@ -73,8 +70,8 @@ public class VentanaTerrenos extends javax.swing.JFrame {
                 .sorted(Comparator.comparingInt(Terreno::getId))
                 .forEach((Terreno terreno) -> {
 
-                    fila[0] = "";
-                    fila[1] = "";
+                    fila[0] = terreno.getDireccionImagen();
+                    fila[1] = terreno.getNombre();
                     fila[2] = "" + terreno.getId();
 
                     modelo.addRow(fila);
@@ -82,6 +79,34 @@ public class VentanaTerrenos extends javax.swing.JFrame {
 
         this.tablaTerrenos.setModel(modelo);
 
+    }
+
+    private void obtenerTerrenos() {
+        this.listaTerrenos.clear();
+        for (int i = 0; i < this.tablaTerrenos.getRowCount(); i++)
+        {
+            String imagen = (String) this.tablaTerrenos.getValueAt(i, 0);
+            String nombre = (String) this.tablaTerrenos.getValueAt(i, 1);
+            String idString = (String) this.tablaTerrenos.getValueAt(i, 2);
+            int id = Integer.parseInt(idString);
+
+            System.out.println("----------------------------");
+            System.out.println(imagen);
+            System.out.println(nombre);
+            System.out.println(id);
+            System.out.println("----------------------------");
+            Terreno terreno = new Terreno();
+            terreno.setId(id);
+            terreno.setDireccionImagen(imagen);
+            terreno.setNombre(nombre);
+
+            this.listaTerrenos.add(terreno);
+        }
+
+        /*
+        VentanaPrincipal ventanaP = new VentanaPrincipal(this.mapa, this.listaTerrenos);
+        ventanaP.setVisible(true);
+        */
     }
 
     /**
@@ -180,8 +205,13 @@ public class VentanaTerrenos extends javax.swing.JFrame {
         setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 
+    public List<Terreno> getListaTerrenos() {
+        return listaTerrenos;
+    }
+
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         setVisible(false);
+        this.obtenerTerrenos();
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     /**
