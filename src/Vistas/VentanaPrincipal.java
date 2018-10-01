@@ -5,17 +5,27 @@
  */
 package Vistas;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 /**
  *
  * @author usuario1
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
+    private String[][] mapa;
+
     /**
      * Creates new form VentanaPrincipal
      */
     public VentanaPrincipal() {
         initComponents();
+    }
+
+    public VentanaPrincipal(String[][] mapa) {
+        this();
+        this.mapa = mapa;
     }
 
     /**
@@ -120,7 +130,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonTerrenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonTerrenosActionPerformed
-        VentanaTerrenos ventanaT = new VentanaTerrenos();
+        String[] listaIds = Arrays.stream(this.mapa)
+                .flatMap(Stream::of)
+                .distinct()
+                .toArray(String[]::new);
+
+        /*
+        for (var id: listaIds) {
+            System.out.println(id);
+        }
+        */
+
+        VentanaTerrenos ventanaT = new VentanaTerrenos(listaIds);
         ventanaT.setVisible(true);
         
     }//GEN-LAST:event_botonTerrenosActionPerformed

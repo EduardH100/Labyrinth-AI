@@ -20,6 +20,7 @@ import java.util.List;
 public class VentanaEligeTerreno extends javax.swing.JFrame {
     private String ruta;
     private String[][] mapa;
+    private boolean esRegreso = false;
 
     /**
      * Creates new form VentanaTerrenos
@@ -96,6 +97,14 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
         this.mapa = mapa;
     }
 
+    public boolean isEsRegreso() {
+        return esRegreso;
+    }
+
+    public void setEsRegreso(boolean esRegreso) {
+        this.esRegreso = esRegreso;
+    }
+
     private void ventanaCargaMapaActionPerformed(java.awt.event.ActionEvent evt) throws Error {//GEN-FIRST:event_ventanaCargaMapaActionPerformed
         // TODO add your handling code here:
         try {
@@ -143,8 +152,14 @@ public class VentanaEligeTerreno extends javax.swing.JFrame {
                     throw new Error("El mapa no es de NxM");
                 }
 
+                this.esRegreso = false;
                 this.setVisible(false);
+
+                new VentanaPrincipal(this.mapa).setVisible(true);
+
+
             } else if (comando.equals(JFileChooser.CANCEL_SELECTION)) {
+                this.esRegreso = true;
                 this.setVisible(false);
             }
         } catch (Error | FileNotFoundException error) {

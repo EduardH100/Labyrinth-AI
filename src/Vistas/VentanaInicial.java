@@ -110,9 +110,6 @@ public class VentanaInicial extends javax.swing.JFrame {
         VentanaEligeTerreno ventanaTerreno = new VentanaEligeTerreno();
         ventanaTerreno.setVisible(true);
 
-        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal();
-        ventanaPrincipal.setVisible(true);
-
         // ventanaP.setVisible(true);
         
     }//GEN-LAST:event_botonIniciarActionPerformed

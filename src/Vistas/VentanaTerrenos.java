@@ -5,11 +5,20 @@
  */
 package Vistas;
 
+import entidades.Terreno;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+
 /**
- *
  * @author usuario1
  */
 public class VentanaTerrenos extends javax.swing.JFrame {
+
+    private List<Terreno> listaTerrenos;
 
     /**
      * Creates new form VentanaTerrenos
@@ -17,6 +26,62 @@ public class VentanaTerrenos extends javax.swing.JFrame {
     public VentanaTerrenos() {
         initComponents();
         setVisible(true);
+    }
+
+    public VentanaTerrenos(String[] listaIds) {
+        this();
+
+        this.listaTerrenos = new ArrayList<>();
+
+        Arrays.stream(listaIds).forEach((String id) -> {
+            Terreno terreno = new Terreno();
+            terreno.setId(Integer.parseInt(id));
+
+            this.listaTerrenos.add(terreno);
+        });
+
+        this.cargarTabla(this.listaTerrenos);
+    }
+
+    private void cargarTabla(List<Terreno> mapa) {
+        if (mapa.size() == 0) {
+            return;
+        }
+        DefaultTableModel modelo = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //return super.isCellEditable(row, column);
+
+                switch (column) {
+                    case 0:
+                    case 1:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        };
+
+        modelo.addColumn("Imagen");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("ID");
+
+
+        String[] fila = new String[3];
+        mapa.stream()
+                .sorted(Comparator.comparingInt(Terreno::getId))
+                .forEach((Terreno terreno) -> {
+
+                    fila[0] = "";
+                    fila[1] = "";
+                    fila[2] = "" + terreno.getId();
+
+                    modelo.addRow(fila);
+                });
+
+        this.tablaTerrenos.setModel(modelo);
+
     }
 
     /**
@@ -38,26 +103,26 @@ public class VentanaTerrenos extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(500, 400));
 
         tablaTerrenos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null}
-            },
-            new String [] {
-                "Imagen", "Nombre", "ID"
-            }
+                new Object[][]{
+                        {null, null, null}
+                },
+                new String[]{
+                        "Imagen", "Nombre", "ID"
+                }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            Class[] types = new Class[]{
+                    java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
-            boolean[] canEdit = new boolean [] {
-                true, true, false
+            boolean[] canEdit = new boolean[]{
+                    true, true, false
             };
 
             public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+                return types[columnIndex];
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
+                return canEdit[columnIndex];
             }
         });
         jScrollPane1.setViewportView(tablaTerrenos);
@@ -84,28 +149,28 @@ public class VentanaTerrenos extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(128, 128, 128)
-                .addComponent(botonCancelar)
-                .addGap(46, 46, 46)
-                .addComponent(botonAceptar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(30, Short.MAX_VALUE)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30))
+                        .addGroup(layout.createSequentialGroup()
+                                .addGap(128, 128, 128)
+                                .addComponent(botonCancelar)
+                                .addGap(46, 46, 46)
+                                .addComponent(botonAceptar)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(botonCancelar)
-                    .addComponent(botonAceptar))
-                .addContainerGap(26, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                        .addComponent(botonCancelar)
+                                        .addComponent(botonAceptar))
+                                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,7 +191,7 @@ public class VentanaTerrenos extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {

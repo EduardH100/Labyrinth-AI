@@ -5,11 +5,22 @@
  */
 package Vistas;
 
+import javax.swing.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- *
  * @author usuario1
  */
 public class VentanaEligeImagen extends javax.swing.JFrame {
+
+    private String ruta;
+    private File archivo;
+    private boolean esRegreso;
 
     /**
      * Creates new form VentanaEligeImagen
@@ -46,35 +57,72 @@ public class VentanaEligeImagen extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(293, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(207, 207, 207))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(293, Short.MAX_VALUE)
+                                .addComponent(jLabel1)
+                                .addGap(207, 207, 207))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(272, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(48, 48, 48)
-                    .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
-                    .addGap(48, 48, 48)))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabel1)
+                                .addContainerGap(272, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(48, 48, 48)
+                                        .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 204, Short.MAX_VALUE)
+                                        .addGap(48, 48, 48)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public String getRuta() {
+        return ruta;
+    }
+
+    public void setRuta(String ruta) {
+        this.ruta = ruta;
+    }
+
+    public File getArchivo() {
+        return archivo;
+    }
+
+    public void setArchivo(File archivo) {
+        this.archivo = archivo;
+    }
+
+    public boolean isEsRegreso() {
+        return esRegreso;
+    }
+
+    public void setEsRegreso(boolean esRegreso) {
+        this.esRegreso = esRegreso;
+    }
+
     private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1ActionPerformed
-        // TODO add your handling code here:
+
+        JFileChooser archivoSeleccionado = (JFileChooser) evt.getSource();
+        String comando = evt.getActionCommand();
+
+        if (comando.equals(JFileChooser.APPROVE_SELECTION)) {
+            this.archivo = archivoSeleccionado.getSelectedFile();
+            this.ruta = archivo.getAbsolutePath();
+
+            this.esRegreso = false;
+            this.setVisible(false);
+        } else if (comando.equals(JFileChooser.CANCEL_SELECTION)) {
+            this.esRegreso = true;
+            this.setVisible(false);
+        }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
     /**
@@ -84,7 +132,7 @@ public class VentanaEligeImagen extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
