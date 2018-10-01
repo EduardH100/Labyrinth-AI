@@ -158,11 +158,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         VentanaTerrenos ventanaT = new VentanaTerrenos(this.mapa, this.listaTerrenos);
         this.setVisible(false);
         ventanaT.setVisible(true);
-        ventanaT.toFront();
 
         // this.listaTerrenos = ventanaT.getListaTerrenos();
 
         this.setVisible(true);
+        ventanaT.toFront();
 
         
     }//GEN-LAST:event_botonTerrenosActionPerformed

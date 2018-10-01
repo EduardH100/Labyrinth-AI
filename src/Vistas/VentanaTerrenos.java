@@ -90,11 +90,6 @@ public class VentanaTerrenos extends javax.swing.JFrame {
             String idString = (String) this.tablaTerrenos.getValueAt(i, 2);
             int id = Integer.parseInt(idString);
 
-            System.out.println("----------------------------");
-            System.out.println(imagen);
-            System.out.println(nombre);
-            System.out.println(id);
-            System.out.println("----------------------------");
             Terreno terreno = new Terreno();
             terreno.setId(id);
             terreno.setDireccionImagen(imagen);
