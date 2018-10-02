@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d66df073-4f4f-40ad-85e2-22f96f2b86ef" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Labyrinth-AI/Vistas/VentanaCostosTerreno.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,7 +28,7 @@
           <entry key="class" value="2" />
           <entry key="form" value="3" />
           <entry key="gitignore" value="1" />
-          <entry key="java" value="41" />
+          <entry key="java" value="46" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
@@ -40,7 +36,7 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="GUI_DESIGNER_FORM" value="3" />
-          <entry key="JAVA" value="41" />
+          <entry key="JAVA" value="46" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -48,12 +44,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="18" />
-          <entry key="java" value="6022" />
+          <entry key="java" value="6107" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6022" />
+          <entry key="JAVA" value="6107" />
           <entry key="PLAIN_TEXT" value="18" />
         </counts>
       </usages-collector>
@@ -61,11 +57,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaInicial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+            <state relative-caret-position="945">
+              <caret line="159" column="48" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2452#2531#1" expanded="true" />
+                <element signature="e#2513#2529#0" expanded="true" />
+                <element signature="e#2540#2556#0" expanded="true" />
+                <element signature="e#2584#3704#0" expanded="true" />
+                <element signature="e#2584#3704#0" expanded="true" />
+                <element signature="e#3714#4534#0" expanded="true" />
+                <element signature="e#3714#4534#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#955#1299#1" expanded="true" />
+                <element signature="e#982#1298#0" expanded="true" />
+                <element signature="e#1173#1274#0" expanded="true" />
+                <element signature="e#1173#1274#0" expanded="true" />
+                <element signature="e#1297#1298#0" expanded="true" />
+                <element signature="e#1419#1449#1" expanded="true" />
+                <element signature="e#1459#1484#0" expanded="true" />
+                <element signature="e#1459#1484#0" expanded="true" />
+                <element signature="e#1635#1665#0" expanded="true" />
+                <element signature="e#1697#1718#0" expanded="true" />
+                <element signature="e#1791#1820#0" expanded="true" />
+                <element signature="e#1791#1820#0" expanded="true" />
+                <element signature="e#1950#1960#1" expanded="true" />
+                <element signature="e#1945#2286#0" expanded="true" />
+                <element signature="e#1945#2286#0" expanded="true" />
+                <element signature="e#1965#1999#0" expanded="true" />
+                <element signature="e#1945#2286#0" expanded="true" />
+                <element signature="e#2028#2091#1" expanded="true" />
+                <element signature="e#2044#2090#0" expanded="true" />
+                <element signature="e#2104#2167#1" expanded="true" />
+                <element signature="e#2120#2166#0" expanded="true" />
+                <element signature="e#2148#2193#0" expanded="true" />
+                <element signature="e#2148#2193#0" expanded="true" />
+                <element signature="e#2207#2243#0" expanded="true" />
+                <element signature="e#2207#2243#0" expanded="true" />
+                <element signature="e#7628#7645#0" expanded="true" />
+                <element signature="e#7628#7645#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -107,10 +164,11 @@
         <option value="$PROJECT_DIR$/src/Vistas/VentanaEligeImagen.java" />
         <option value="$PROJECT_DIR$/src/Vistas/VentanaEligeTerreno.java" />
         <option value="$PROJECT_DIR$/src/Vistas/VentanaTerrenos.java" />
-        <option value="$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java" />
         <option value="$PROJECT_DIR$/src/laberinto/Main.java" />
         <option value="$PROJECT_DIR$/src/Vistas/VentanaCostosTerreno.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java" />
+        <option value="$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java" />
       </list>
     </option>
   </component>
@@ -164,7 +222,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538516078758" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538517099104" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
   <component name="RunDashboard">
@@ -243,7 +301,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -258,7 +316,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32771084" />
@@ -299,13 +357,6 @@
     <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaEligeTerreno.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/Function.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -340,37 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaEligeImagen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="108" column="5" lean-forward="true" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaInicial.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="771">
-          <caret line="159" column="48" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2452#2531#1" expanded="true" />
-            <element signature="e#2513#2529#0" expanded="true" />
-            <element signature="e#2540#2556#0" expanded="true" />
-            <element signature="e#2584#3704#0" expanded="true" />
-            <element signature="e#2584#3704#0" expanded="true" />
-            <element signature="e#3714#4534#0" expanded="true" />
-            <element signature="e#3714#4534#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaEligeTerreno.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="742">
-          <caret line="209" column="48" selection-start-line="209" selection-start-column="45" selection-end-line="209" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPrincipal.form">
       <provider selected="true" editor-type-id="ui-designer" />
     </entry>
@@ -378,13 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="164" column="27" selection-start-line="164" selection-start-column="27" selection-end-line="164" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -447,6 +460,108 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaEligeTerreno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="209" column="48" selection-start-line="209" selection-start-column="45" selection-end-line="209" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3852#3853#0" expanded="true" />
+            <element signature="e#3884#3885#0" expanded="true" />
+            <element signature="e#3935#3936#0" expanded="true" />
+            <element signature="e#3977#3978#0" expanded="true" />
+            <element signature="e#4231#4261#0" expanded="true" />
+            <element signature="e#4246#4261#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaEligeImagen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="108" column="5" selection-start-line="108" selection-start-column="5" selection-end-line="108" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3684#3685#0" expanded="true" />
+            <element signature="e#3711#3712#0" expanded="true" />
+            <element signature="e#3751#3752#0" expanded="true" />
+            <element signature="e#3783#3784#0" expanded="true" />
+            <element signature="e#3815#3816#0" expanded="true" />
+            <element signature="e#3845#3846#0" expanded="true" />
+            <element signature="e#3889#3890#0" expanded="true" />
+            <element signature="e#3927#3928#0" expanded="true" />
+            <element signature="e#3963#3964#0" expanded="true" />
+            <element signature="e#3995#3996#0" expanded="true" />
+            <element signature="e#4046#4047#0" expanded="true" />
+            <element signature="e#4088#4089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaInicial.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="159" column="48" selection-start-line="159" selection-start-column="45" selection-end-line="159" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2452#2531#1" expanded="true" />
+            <element signature="e#2513#2529#0" expanded="true" />
+            <element signature="e#2540#2556#0" expanded="true" />
+            <element signature="e#2584#3704#0" expanded="true" />
+            <element signature="e#2584#3704#0" expanded="true" />
+            <element signature="e#3714#4534#0" expanded="true" />
+            <element signature="e#3714#4534#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPersonajes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#955#1299#1" expanded="true" />
+            <element signature="e#982#1298#0" expanded="true" />
+            <element signature="e#1173#1274#0" expanded="true" />
+            <element signature="e#1173#1274#0" expanded="true" />
+            <element signature="e#1297#1298#0" expanded="true" />
+            <element signature="e#1419#1449#1" expanded="true" />
+            <element signature="e#1459#1484#0" expanded="true" />
+            <element signature="e#1459#1484#0" expanded="true" />
+            <element signature="e#1635#1665#0" expanded="true" />
+            <element signature="e#1697#1718#0" expanded="true" />
+            <element signature="e#1791#1820#0" expanded="true" />
+            <element signature="e#1791#1820#0" expanded="true" />
+            <element signature="e#1950#1960#1" expanded="true" />
+            <element signature="e#1945#2286#0" expanded="true" />
+            <element signature="e#1945#2286#0" expanded="true" />
+            <element signature="e#1965#1999#0" expanded="true" />
+            <element signature="e#1945#2286#0" expanded="true" />
+            <element signature="e#2028#2091#1" expanded="true" />
+            <element signature="e#2044#2090#0" expanded="true" />
+            <element signature="e#2104#2167#1" expanded="true" />
+            <element signature="e#2120#2166#0" expanded="true" />
+            <element signature="e#2148#2193#0" expanded="true" />
+            <element signature="e#2148#2193#0" expanded="true" />
+            <element signature="e#2207#2243#0" expanded="true" />
+            <element signature="e#2207#2243#0" expanded="true" />
+            <element signature="e#7628#7645#0" expanded="true" />
+            <element signature="e#7628#7645#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Vistas/VentanaPrincipal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="225" column="27" selection-start-line="225" selection-start-column="27" selection-end-line="225" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

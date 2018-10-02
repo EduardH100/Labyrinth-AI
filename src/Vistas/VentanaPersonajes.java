@@ -5,11 +5,24 @@
  */
 package Vistas;
 
+import entidades.Personaje;
+import entidades.Terreno;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
+
 /**
  *
  * @author usuario1
  */
 public class VentanaPersonajes extends javax.swing.JFrame {
+
+    private Personaje[] personajes;
+    private List<Terreno> listaTerrenos;
 
     /**
      * Creates new form VentanaPersonajes
@@ -17,6 +30,64 @@ public class VentanaPersonajes extends javax.swing.JFrame {
     public VentanaPersonajes() {
         initComponents();
     }
+
+    public  VentanaPersonajes(Personaje[] personajes, List<Terreno> listaTerrenos) {
+        this();
+        this.personajes = personajes;
+        this.listaTerrenos = listaTerrenos;
+        this.cargarTabla();
+    }
+
+    private void cargarTabla() {
+        DefaultTableModel modelo = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //return super.isCellEditable(row, column);
+
+                switch (column) {
+                    default:
+                        return true;
+                }
+            }
+        };
+
+        modelo.addColumn("Imagen");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Costos");
+
+
+        String[] fila = new String[3];
+
+        Arrays.stream(personajes)
+                .sorted(Comparator.comparing(Personaje::getNombre))
+                .forEach((Personaje personaje) -> {
+                    fila[0] = personaje.getDireccionImagen();
+                    fila[1] = personaje.getNombre();
+
+                    modelo.addRow(fila);
+                });
+
+        this.jTable1.setModel(modelo);
+        System.out.println(System.getProperty("user.dir"));
+
+    }
+
+    private void obtenerPersonajes() {
+        for (int i = 0; i < this.jTable1.getRowCount(); i++)
+        {
+            String imagen = (String) this.jTable1.getValueAt(i, 0);
+            String nombre = (String) this.jTable1.getValueAt(i, 1);
+            this.personajes[i].setDireccionImagen(imagen);
+            this.personajes[i].setNombre(nombre);
+        }
+
+        /*
+        VentanaPrincipal ventanaP = new VentanaPrincipal(this.mapa, this.listaTerrenos);
+        ventanaP.setVisible(true);
+        */
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -119,6 +190,7 @@ public class VentanaPersonajes extends javax.swing.JFrame {
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
+        this.obtenerPersonajes();
         setVisible(false);
     }//GEN-LAST:event_botonAceptarActionPerformed
 

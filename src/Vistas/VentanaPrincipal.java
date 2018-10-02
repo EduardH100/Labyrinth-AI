@@ -6,6 +6,7 @@
 package Vistas;
 
 import entidades.Terreno;
+import entidades.Personaje;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,6 +21,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private String[][] mapa;
     private List<Terreno> listaTerrenos;
+    private static Personaje[] personajes = {
+            new Personaje(),
+            new Personaje(),
+            new Personaje(),
+            new Personaje()
+    };
 
     /**
      * Creates new form VentanaPrincipal
@@ -51,6 +58,52 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.mapa = mapa;
         this.listaTerrenos = listaTerrenos;
     }
+
+    /*
+    public void pintarMapa(String[][] mapa){
+
+        pintarFilasColumnas(mapa);
+
+        for(int i=0; i < mapa.length; i++){
+
+            for(int j=0; j < mapa[0].length ; j++){
+                JLabel celda = new JLabel();
+                celda.setText(mapa[i][j]);
+                celda.setBounds(40*j+1,i*30,150,30);
+                panelMapa.add(celda);
+                System.out.print(celda.getText() + ",");
+            }
+            System.out.println();
+        }
+        panelMapa.repaint();
+        panelMapa.setVisible(true);
+    }
+
+    public static void pintarFilasColumnas(String[][] mapa) {
+        char letra = 'A';
+        int numero = 1;
+        Font formatoLetra = new Font("Arial", Font.BOLD, 20);
+        JLabel cuadro;
+
+        for (int i = 1; i <= mapa[0].length; i++) {
+            cuadro = new JLabel();
+            cuadro.setFont(formatoLetra);
+            cuadro.setText("  " + letra);
+            panelMapa.add(cuadro);
+            letra++;
+        }
+
+        for (int j = 1; j <= mapa.length; j++) {
+            cuadro = new JLabel();
+            cuadro.setFont(formatoLetra);
+            cuadro.setText(" " + numero);
+            panelMapa.add(cuadro);
+            numero++;
+        }
+
+    }
+
+    */
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -168,8 +221,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonTerrenosActionPerformed
 
     private void botonPersonajesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPersonajesActionPerformed
-        VentanaPersonajes ventanaP = new VentanaPersonajes();
+        VentanaPersonajes ventanaP = new VentanaPersonajes(this.personajes, this.listaTerrenos);
         ventanaP.setVisible(true);
+        ventanaP.toFront();
     }//GEN-LAST:event_botonPersonajesActionPerformed
 
     private void botonInicialFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonInicialFinalActionPerformed
