@@ -5,17 +5,98 @@
  */
 package Vistas;
 
+import entidades.Terreno;
+import java.util.Comparator;
+import java.util.List;
+import java.util.HashMap;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author usuario1
  */
 public class VentanaCostosTerreno extends javax.swing.JFrame {
 
+    private List<Terreno> listaTerrenos;
+    private HashMap<String, Double> listaCostos;
+
     /**
      * Creates new form VentanaCostosTerreno
      */
     public VentanaCostosTerreno() {
         initComponents();
+    }
+
+    public VentanaCostosTerreno(List<Terreno> listaTerrenos, HashMap<String, Double> listaCostos) {
+        this();
+
+        // this.listaTerrenos = new ArrayList<>();
+        this.listaTerrenos = listaTerrenos;
+
+        this.listaCostos = listaCostos;
+
+        this.cargarTabla(this.listaTerrenos);
+    }
+
+    private void cargarTabla(List<Terreno> mapa) {
+        if (mapa.size() == 0) {
+            return;
+        }
+
+        DefaultTableModel modelo = new DefaultTableModel() {
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                //return super.isCellEditable(row, column);
+
+                switch (column) {
+                    case 2:
+                        return true;
+                    default:
+                        return false;
+                }
+            }
+        };
+
+        modelo.addColumn("Imagen");
+        modelo.addColumn("Nombre");
+        modelo.addColumn("costo");
+        modelo.addColumn("ID");
+
+
+        String[] fila = new String[4];
+        mapa.stream()
+                .sorted(Comparator.comparingInt(Terreno::getId))
+                .forEach((Terreno terreno) -> {
+
+                    fila[0] = terreno.getDireccionImagen();
+                    fila[1] = terreno.getNombre();
+                    fila[2] = "";
+                    fila[3] = "" + terreno.getId();
+
+                    modelo.addRow(fila);
+                });
+
+        this.jTable1.setModel(modelo);
+
+    }
+
+    private void obtenerTerrenos() {
+        this.listaCostos.clear();
+        for (int i = 0; i < this.jTable1.getRowCount(); i++)
+        {
+            String costoSting = (String) this.jTable1.getValueAt(i, 2);
+            String idString = (String) this.jTable1.getValueAt(i, 3);
+            int id = Integer.parseInt(idString);
+            Double costo = Double.parseDouble(costoSting);
+
+            this.listaCostos.put(idString, costo);
+        }
+
+        /*
+        VentanaPrincipal ventanaP = new VentanaPrincipal(this.mapa, this.listaTerrenos);
+        ventanaP.setVisible(true);
+        */
     }
 
     /**
@@ -104,10 +185,13 @@ public class VentanaCostosTerreno extends javax.swing.JFrame {
 
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
         // TODO add your handling code here:
+        this.obtenerTerrenos();
+        this.setVisible(false);
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCancelarActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_botonCancelarActionPerformed
 
     /**
